@@ -1,9 +1,10 @@
-#  Self Destructing Downloader
+# Self Destructing Downloader
 This is a robot for downloading videos and images that are sent through Telegram in a self-destructing way.
 
 Robot capabilities:
 - High speed in storage
 - Sends a copy to your saved messages
+- Optimal use of resources
 
 # Requirements
 - Python (3.5, 3.6, 3.7, 3.8, 3.9, 3.10)
