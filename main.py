@@ -22,7 +22,7 @@ client = TelegramClient(
 client.start()
 
 
-@client.on(events.NewMessage(func=lambda e: e.is_private and (e.photo or e.video) and e.media_unread))
+@client.on(events.NewMessage(func=lambda e: e.is_private and e.media and e.media.ttl_seconds))
 async def downloader(event):
     result = await event.download_media()
     await client.send_file("me", result, caption="Downloaded by @MahdiAshtian")
