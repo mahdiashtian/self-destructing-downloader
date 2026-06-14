@@ -1,37 +1,55 @@
-# Self Destructing Downloader
-This is a robot for downloading videos and images that are sent through Telegram in a self-destructing way.
+# Self Destructing Downloader (Enhanced)
+Это клиент для загрузки видео, изображений и голосовых сообщений отправляемых через Telegram, с возможностью самоуничтожения.
 
-Robot capabilities:
-- High speed in storage
-- Sends a copy to your saved messages
-- Optimal use of resources
+Возможности клиента:
+- Скачивание самоуничтожающихся медиафайлов (Видео/Аудио/Изображение)
+- Отправляет копию сохраненных сообщений
+- Обходит запреты на копирование/пересылку в группах/каналах
+- Скачивание/Пересылка медиафайлов по ссылке с использованием /download, /forward и /paid ключей
+- Обнаружение медиафайлов отправленных оператором клиента (вы) и игнорирование их к загрузке
+- Подробное логирование ошибок
+- Вывод @username, ID или номер телефона отправителя
+- Скачивание платного контента купленного за Telegram Stars
 
-# Requirements
-- Python (3.5, 3.6, 3.7, 3.8, 3.9, 3.10)
-- Telethon (1.26.1)
+# Требуется
+- Python (Последняя версия)
+- Telethon (Последняя версия)
 
-# Installation
-```
-git clone https://github.com/mahdiashtian/self-destructing-downloader.git
-```
-```
-cd self-destructing-downloader
+# Установка
+Скачайте ZIP архив из раздела Releases и распакуйте его. Затем по очереди выполните эти две команды:
+ ```
+cd SDD-Enhanced
 ```
 ```
 pip install -r requirements.txt
 ```
-# Usage
+# Использование
+Создайте пустой .env файл через CMD:
+```
+type nul > .env
+```
+Или через PowerShell:
+```
+New-Item -Path ".\.env" -ItemType "File"
+```
+Либо через Linux/macOS терминалы:
 ```
 touch .env
 ```
-Open the ".env" file and copy the following information into it:
-```
-API_ID=123456
-API_HASH="35886641ed1bfaa92e7ee30er9888"
-```
-You can get these values from the my.telegram.org site.
 
-Then enter the following command in the terminal and complete the authentication process:
+<br>
+Откройте файл «.env» и скопируйте в него полученные данные:
+
+```
+API_ID=12345678
+API_HASH="a1b2c3d4e5f67890123456789abcdef0"
+MY_ID=1234567890
+```
+Эти значения можно получить на сайте my.telegram.org. ID можно узнать через сторонних ботов либо через веб-версию Telegram
+
+<br>
+
+Затем введите в терминале следующую команду и завершите процесс аутентификации:
 ```
 python main.py
 ```

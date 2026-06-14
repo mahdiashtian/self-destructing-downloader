@@ -1,2 +1,2 @@
-telethon==1.38.1
-python-decouple==3.6
+telethon
+python-decouple
