@@ -7,8 +7,8 @@ Robot capabilities:
 - Optimal use of resources
 
 # Requirements
-- Python (3.5, 3.6, 3.7, 3.8, 3.9, 3.10)
-- Telethon (1.26.1)
+- Python 3.8 or newer (including Python 3.14)
+- Telethon 1.38.1 (installed from `requirements.txt`)
 
 # Installation
 ```
@@ -35,3 +35,16 @@ Then enter the following command in the terminal and complete the authentication
 ```
 python main.py
 ```
+
+The client is created and started inside `asyncio.run()`, so startup works on
+Python 3.14 without relying on an implicitly created event loop. The existing
+`mahdiashtian.session` login is reused.
+
+# Tests
+After installing the requirements, run:
+```
+python -m unittest discover -s tests -v
+```
+The regression tests construct a real Telethon client with an in-memory session,
+replace network operations, and verify startup, shutdown and download behavior.
+They do not require Telegram credentials or a live login.
